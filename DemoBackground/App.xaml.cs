@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DemoBackground.Services;
+using Matcha.BackgroundService;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace DemoBackground
 {
@@ -10,22 +10,29 @@ namespace DemoBackground
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.MainPage();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            // Registra
+            BackgroundAggregatorService.Add(() => new BackgroundService(15));
+
+            // Inicia
+            BackgroundAggregatorService.StartBackgroundService();
         }
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            // Para
+            BackgroundAggregatorService.StopBackgroundService();
         }
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            // Inicia Novamente
+            BackgroundAggregatorService.StartBackgroundService();
         }
+
     }
 }
