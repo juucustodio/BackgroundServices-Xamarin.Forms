@@ -16,5 +16,5 @@ Example of how to use Background Services in Xamarin.Forms applications.
 
 # Result
 <p>
-  <image height="500px"src="https://julianocustodiosite.files.wordpress.com/2020/01/ezgif.com-video-to-gif.gif?w=681&h=379"/><br>  
+  <image src="https://julianocustodiosite.files.wordpress.com/2020/01/ezgif.com-video-to-gif.gif"/>  
 </p>
